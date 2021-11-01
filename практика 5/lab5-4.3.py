@@ -11,8 +11,19 @@ def time(Hotp, Motp, Hp, Mp):
         minutes = Motp + Mp  # если сумма минут меньше 60 то просто их складваем
 
     # выводим ответ
-    print(hours, 'hours :', minutes, 'minutes')
-    print(days, 'days')
+    if minutes < 10:
+        if hours < 10:
+            print("0" + str(hours) + " hours :", "0" + str(minutes) + " minutes")
+            print(str(days) + " days")
+        else:
+            print(str(hours) + " hours :", "0" + str(minutes) + " minutes")
+            print(str(days) + " days")
+    elif hours < 10:
+        print("0" + str(hours) + " hours :", str(minutes) + " minutes")
+        print(str(days) + " days")
+    else:
+        print(str(hours) + " hours :", str(minutes) + " minutes")
+        print(str(days) + " days")
 
 
 # ввод данных
