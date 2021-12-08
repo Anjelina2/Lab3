@@ -1,9 +1,6 @@
 # Задача: Ход конем
 
-from typing import List
-
-
-def table(matrix: List[List[int]]) -> str:  # Переделываем двумерный список board в таблицу
+def table(matrix):  # Переделываем двумерный список board в таблицу
     A = len(matrix)
     B = len(matrix[0])
     output = ""
@@ -15,7 +12,7 @@ def table(matrix: List[List[int]]) -> str:  # Переделываем двум�
 motion = [[2, 1], [2, -1], [1, 2], [1, -2], [-1, 2], [-1, -2], [-2, 1], [-2, -1]]  # Ходы  шахматного коня
 
 
-def allowed_moves(x: int, y: int) -> List[List[int]]:  # Доступные пути из точки x, y
+def allowed_moves(x, y):  # Доступные пути из точки x, y
     possible = []
     for m in motion:
         if (0 <= x + m[0] < N) and (0 <= y + m[1] < M) and (board[y + m[1]][x + m[0]]) == 0:
@@ -28,7 +25,7 @@ def decision():  # решение задачи с помощью правила 
     y = Y - 1
     for i in range(1, M * N + 1):
         board[y][x] = i
-        next_move: List[int] = []
+        next_move = []
         min = 9
         for move in allowed_moves(x, y):
             count = len(allowed_moves(x + move[0], y + move[1]))
