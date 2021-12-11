@@ -46,6 +46,7 @@ text.add_column("Отсортированная в обратном порядк
 # переносим данные в файл
 file = open("output.txt", "w")
 text_txt = text.get_string()
+file.write(str(sorts.check(list)) + '\n')
 file.write("Число элементов последовательностей: " + str(N) + '\n')
 file.write(text_txt)
 file.close()
